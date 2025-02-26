@@ -37,15 +37,7 @@ typedef struct {
 // Internal function to initialize an array of a specific element size
 void *_array_init(size_t bytes) {
     // Allocate memory for the array metadata and initial element storage.
-    array_info *info = malloc(sizeof(array_info) + (bytes * 2));
-    if (!info) {
-        perror("Failed to allocate memory for array");
-        exit(EXIT_FAILURE);
-    }
-    info->capacity = 2; 
-    info->size = 0;    
-    info->bytes = bytes; 
-    return (void *)(info + 1); // Return pointer to the first element.
+
 }
 
 // Ensures the array has enough capacity to add new elements, resizing if necessary.
